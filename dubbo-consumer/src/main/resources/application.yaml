@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: dubbo-consumer
+
+server:
+  port: 8001
+
+
+nacos:
+  host: localhost
+  port: 8848
+  username: nacos
+  password: nacos
+
+demo:
+  service:
+    version: 0.0.1
+
+
+dubbo:
+  registry:
+    address: nacos://${nacos.host}:${nacos.port}/?username=${nacos.username}&password=${nacos.password}
